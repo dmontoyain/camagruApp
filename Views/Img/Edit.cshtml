@@ -1,0 +1,57 @@
+@page
+@model camagruApp.Views_UploadImage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Img</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Img.id" />
+            <div class="form-group">
+                <label asp-for="Img.img" class="control-label"></label>
+                <input asp-for="Img.img" class="form-control" />
+                <span asp-validation-for="Img.img" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img.userid" class="control-label"></label>
+                <input asp-for="Img.userid" class="form-control" />
+                <span asp-validation-for="Img.userid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img.dateposted" class="control-label"></label>
+                <input asp-for="Img.dateposted" class="form-control" />
+                <span asp-validation-for="Img.dateposted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img.caption" class="control-label"></label>
+                <input asp-for="Img.caption" class="form-control" />
+                <span asp-validation-for="Img.caption" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img.likes" class="control-label"></label>
+                <input asp-for="Img.likes" class="form-control" />
+                <span asp-validation-for="Img.likes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img.comments" class="control-label"></label>
+                <input asp-for="Img.comments" class="form-control" />
+                <span asp-validation-for="Img.comments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+

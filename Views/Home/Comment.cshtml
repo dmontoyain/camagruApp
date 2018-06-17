@@ -1,0 +1,28 @@
+@model camagruApp.Models.Img
+<table class="table">
+    <tbody>
+    @if (Model.Comments != null)
+    {
+        @foreach (var item in Model.Comments)
+        {
+        <tr>
+            <td>
+                <div>
+                    <h5>@item.username</h5>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    @item.content
+                </div>
+            </td>
+        </tr>
+        }
+    }
+    </tbody>
+</table>
+@using (Html.BeginForm("AddComment", "Home"))
+    {
+        @Html.Hidden("imgid", Model.id)
+        @Html.TextArea("content")
+        <input type="submit" value="Add Comment" />
+    }

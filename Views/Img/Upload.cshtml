@@ -1,0 +1,45 @@
+﻿@model camagruApp.Models.Img
+@{
+    ViewData["Title"] = "CamagrUpload";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var canvas = document.getElementById('canasp');
+            var context = canvas.getContext('2d');
+            // Rectangles
+            context.fillStyle = "rgba(156, 170, 193, 1)";
+            context.fillRect(30, 30, 70, 90);
+            context.fillStyle = "rgba(0, 109, 141, 1)";
+            context.fillRect(10, 10, 70, 90);
+            $("#btnSave").on('click', function (e) {
+                e.preventDefault();
+                var imgData = canvas.toDataURL();
+                //alert(imgData);
+                $("#<%=imgASP.ClientID %>")
+                .attr("src", imgData)
+            });
+        });
+    </script>
+
+<div class="col-md-4"> 
+    <form method="post" enctype="multipart/form-data" asp-action="Upload">
+    <canvas id="canasp" width="100" height="100">
+    </canvas><br />
+        <div class="form-group">
+            <input type="file" asp-for="img" class="form-control" name="img"/>
+            <span asp-validation-for="img" class="text-danger">@ViewData["IsImgValid"]</span>
+        </div>
+        <div class="form-group">
+            <label asp-for="caption" class="control-label"></label>
+            <input asp-for="caption" class="form-control" />
+            <span asp-validation-for="caption" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Upload" class="btn btn-default" />
+        </div>
+    </form>
+</div>

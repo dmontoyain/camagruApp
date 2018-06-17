@@ -1,0 +1,42 @@
+@page
+@model camagruApp.Views_UploadImage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Img) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.img)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.userid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateposted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.likes)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

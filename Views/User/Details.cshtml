@@ -1,0 +1,54 @@
+@model camagruApp.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Hi @ViewData["username"] !</h2>
+
+<div>
+    <h4>Your User Account Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.firstname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.firstname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.lastname)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.lastname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.passwd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.passwd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IsEmailVerified)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsEmailVerified)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-controller="User" asp-action="Edit">Edit</a> |
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>

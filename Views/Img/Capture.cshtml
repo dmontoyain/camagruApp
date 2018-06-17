@@ -1,0 +1,52 @@
+@model camagruApp.Models.Img
+@{
+    ViewData["Title"] = "Capture";
+}
+@section scripts
+{
+<script src="~/lib/jquery/webcam/jquery.webcam.js"></script>
+<script>
+    $("#Camera").webcam({
+        width: 320,
+        height: 240,
+        mode: "save",
+        swffile: "@Url.Content("~/lib/jquery/camera/jscam.swf")",
+        onTick: function () { },
+        onSave: function () {
+        },
+        onCapture: function () {
+            webcam.save('/Views/Img/Capture');
+        }
+    });
+</script>    
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+<div id="Camera">
+    @{
+        var temp = Convert.ToInt16(ViewData["ImgCaptured"]);
+        if (temp != 0)
+        {
+            var base64 = Convert.ToBase64String(Model.img);
+            var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+            <img src='@imgsrc' align="middle" height="200" width="200" />
+        }
+    }
+    
+</div>
+<input type="button" value="Take Picture" onclick="webcam.capture();" />
+<form method="post" enctype="multipart/form-data" asp-action="Upload">
+    <div class="form-group">
+        <input type="file" asp-for="img" class="form-control" name="img"/>
+        <span asp-validation-for="img" class="text-danger">@ViewData["IsImgValid"]</span>
+    </div>
+    <div class="form-group">
+        <label asp-for="caption" class="control-label"></label>
+        <input asp-for="caption" class="form-control" />
+        <span asp-validation-for="caption" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Upload" class="btn btn-default" />
+    </div>
+</form>

@@ -1,0 +1,47 @@
+﻿@model camagruApp.Models.ImgListData
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<table class="table">
+    <thead>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.imgList)
+    {
+        <tr>
+            <td>
+            @{
+                var base64 = Convert.ToBase64String(item.img);
+                var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+            }
+                <div>
+                    <h5>@item.username</h5>
+                    @item.dateposted
+                </div>
+                <br>
+                <div>
+                    <img src='@imgsrc' align="middle" height="200" width="200" />
+                </div>
+                <br>
+                <div style="text-align: center">
+                    <a asp-area="" asp-controller="Home" asp-action="Like" asp-route-id="@item.id">@item.likes Likes</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    @item.caption
+                </div>
+                <div class="comments-container">
+                    @{Html.RenderPartial("Comment", item);}
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

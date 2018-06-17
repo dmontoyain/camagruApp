@@ -1,0 +1,58 @@
+@page
+@model camagruApp.Views_UploadImage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Img</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.img)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.img)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.userid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.userid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.dateposted)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.dateposted)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.caption)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.caption)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.likes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.likes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Img.comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Img.comments)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Img.id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

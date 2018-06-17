@@ -1,0 +1,11 @@
+C:\Users\dmont\Documents\camagruApp\bin\Debug\netcoreapp2.0\camagruApp.deps.json
+C:\Users\dmont\Documents\camagruApp\bin\Debug\netcoreapp2.0\camagruApp.runtimeconfig.json
+C:\Users\dmont\Documents\camagruApp\bin\Debug\netcoreapp2.0\camagruApp.runtimeconfig.dev.json
+C:\Users\dmont\Documents\camagruApp\bin\Debug\netcoreapp2.0\camagruApp.dll
+C:\Users\dmont\Documents\camagruApp\bin\Debug\netcoreapp2.0\camagruApp.pdb
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.csproj.CoreCompileInputs.cache
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.AssemblyInfoInputs.cache
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.AssemblyInfo.cs
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.dll
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.pdb
+C:\Users\dmont\Documents\camagruApp\obj\Debug\netcoreapp2.0\camagruApp.csprojResolveAssemblyReference.cache
